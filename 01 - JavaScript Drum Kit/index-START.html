@@ -64,7 +64,7 @@
   window.addEventListener('keydown', function (e) {
     const audio = document.querySelector(`audio[data-key= "${e.keyCode}"]`)
 
-    const key = document.querySelector(`key.[data-key= "$(e.keycode)"]`)
+    const key = document.querySelector(`key.[data-key= "$(e.keyCode)"]`)
     // If there is no audio, stop the function from running all together
     if(!audio) return;
   
@@ -75,6 +75,10 @@
     key.classList.add('playing')
 
   });
+
+  function removeTransition(e) {
+    if(e.propertyName !== 'transform') return; // skip if it's not a transform
+  }
 
   const keys = document.querySelectorAll('.key')
   keys.forEach(key => key.addEventListener('transitionend', removeTransition))
