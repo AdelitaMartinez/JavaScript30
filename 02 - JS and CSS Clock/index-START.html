@@ -90,7 +90,9 @@
 
       console.log('minutes')
 
-      const hour = not.getHours()
+      const hour = not.getHours();
+      const hourDegrees = ((hours / 60) *360) + 90
+      hourHand.style.transoform = `rotate(${hourDegrees}deg)`
     }
 
     
