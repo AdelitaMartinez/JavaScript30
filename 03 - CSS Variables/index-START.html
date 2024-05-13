@@ -63,6 +63,21 @@
 
   <script>
     const inputs = document.querySelectorAll('.controls input')
+    
+    function handleUpdate() {
+      console.log(this.value)
+    }
+
+    // addEventListener() allows you to attach an event handler to an element
+    // SYNTAX:  target.addEventListener( 'event', function, useCapture); 
+    // Target = HTML element which you want to add the event handler too
+    // Event = A string specifying the name of the event (ex: change, movemouse, click)
+    // Function = Function to run when event occurs (in this case, handleUpdate)
+    // useCapture (Optional) = a boolean value that determines whether handler should execute 
+
+    inputs.forEach(input => input.addEventListener('change', handleUpdate))
+    inputs.forEach(input => input.addEventListener('mousemove', handleUpdate))
+
   </script>
 
 </body>
