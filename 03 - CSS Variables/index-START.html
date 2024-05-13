@@ -68,6 +68,8 @@
       // dataset = will make object out of everything structured like => data-xxxx 
       // || '' = or nothing: if this is not added we may get undefined 
       const suffix = this.dataset.sizing || '';
+      
+      document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix)
     }
 
     // addEventListener() allows you to attach an event handler to an element
